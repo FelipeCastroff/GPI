@@ -27,7 +27,7 @@ const redirectHome = () => {
 };
 
 const redirectCompo1 = () => {
-  history.push("/Grupo3/Componente1");
+  history.push("/Grupo3/VistaPrincipal");
 };
 const redirectCompo2 = () => {
   history.push("/Grupo3/Componente2");
@@ -82,11 +82,11 @@ export default function SSADrawer() {
       </List>
       <Divider />
       <List>
-        <ListItem onClick={redirectCompo1} button key="Componente1">
+        <ListItem onClick={redirectCompo1} button key="Talleres">
           <ListItemIcon>
             <AssignmentIcon />
           </ListItemIcon>
-          <ListItemText primary={"Componente1"} />
+          <ListItemText primary={"Talleres"} />
         </ListItem>
         <ListItem onClick={redirectCompo2} button key="Componente2">
           <ListItemIcon>
