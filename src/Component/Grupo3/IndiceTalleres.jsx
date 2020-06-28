@@ -1,231 +1,154 @@
 import React from "react";
+import Button from "@material-ui/core/Button";
+import CameraIcon from "@material-ui/icons/PhotoCamera";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import ButtonBase from "@material-ui/core/ButtonBase";
-import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    margin: "auto",
-    maxWidth: 500,
-  },
-  image: {
-    width: 128,
-    height: 128,
+  icon: {
+    marginRight: theme.spacing(2),
   },
   img: {
-    margin: "auto",
-    display: "block",
-    maxWidth: "100%",
-    maxHeight: "100%",
+    backgroundImage:
+      "url(https://3718aeafc638f96f5bd6-d4a9ca15fc46ba40e71f94dec0aad28c.ssl.cf1.rackcdn.com/journal-sports-and-active-living.png)",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center center",
+    backgroundSize: "cover",
+    backgroundAttachment: "fixed",
+    height: "100%",
   },
-  control: {
+  heroContent: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(8, 0, 6),
+  },
+  heroButtons: {
+    marginTop: theme.spacing(4),
+  },
+  cardGrid: {
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
+  },
+  card: {
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+  },
+  cardMedia: {
+    paddingTop: "56.25%", // 16:9
+  },
+  cardContent: {
+    flexGrow: 1,
+  },
+  footer: {
+    backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(2),
   },
 }));
 
-export default function ImageGridList() {
-  const [spacing, setSpacing] = React.useState(2);
-  const classes = useStyles();
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  const handleChange = (event) => {
-    setSpacing(Number(event.target.value));
-  };
+export default function Album() {
+  const classes = useStyles();
 
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth="xl">
-        <Container fixed>
-          <Typography variant="h2" gutterBottom>
-            A ya creo que comprendo esta basura
-          </Typography>
+      <main>
+        <div className={classes.heroContent}>
+          <Container maxWidth="xl" img className={classes.img}>
+            <Container maxWidth="md">
+              <Typography
+                component="h1"
+                variant="h2"
+                align="center"
+                color="Primary"
+                gutterBottom
+              >
+                Talleres de Deportes
+              </Typography>
+              <Typography variant="h5" align="center" color="inherit" paragraph>
+                Escoge el taller deportivo que más te guste y acomode, sientete
+                libre de escoger y no olvides de asistir a los horarios de cada
+                clase!
+              </Typography>
+              <Typography
+                variant="h6"
+                align="center"
+                color="textSecondary"
+                paragraph
+              >
+                Mira y Escoge alguno de los siguientes talleres, ten presente
+                los horarios y los cupos de cada uno!
+              </Typography>
+              <Typography variant="h4" align="center" color="Primary" paragraph>
+                ¡Te estaremos esperando!
+              </Typography>
+            </Container>
+          </Container>
+        </div>
+        <Container className={classes.cardGrid} maxWidth="md">
+          <Grid container spacing={4}>
+            {cards.map((card) => (
+              <Grid item key={card} xs={12} sm={6} md={4}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image="https://source.unsplash.com/random"
+                    title="Image title"
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Deporte1
+                    </Typography>
+                    <Typography>
+                      Taller Deportivo: Descripcion general de contenido del
+                      taller
+                    </Typography>
+                    <Typography color="textSecondary">
+                      Horario: 15:50 pm - 16:30 pm
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      Ver Taller
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
         </Container>
-      </Container>
-      <Container maxWidth="xl">
-        <Grid container className={classes.root} spacing={2}>
-          <Grid container justify="center" spacing="{spacing}">
-            {[0, 1, 2].map((value) => (
-              <Paper className={classes.paper}>
-                <Grid container spacing={2}>
-                  <Grid item>
-                    <ButtonBase className={classes.image}>
-                      <img
-                        className={classes.img}
-                        alt="Natacion"
-                        src="https://ih1.redbubble.net/image.689468964.9430/flat,128x128,075,f-pad,128x128,f8f8f8.jpg"
-                      />
-                    </ButtonBase>
-                  </Grid>
-                  <Grid item xs={12} sm container>
-                    <Grid item xs container direction="column" spacing={2}>
-                      <Grid item xs>
-                        <Typography gutterBottom variant="subtitle1">
-                          Natacion
-                        </Typography>
-                        <Typography variant="body2" gutterBottom>
-                          Taller de natacion aquabodyfullshark2.0
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary">
-                          Horario: 05:05 am - 8:00 am
-                        </Typography>
-                      </Grid>
-                      <Grid item>
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          href="https://www.youtube.com/watch?v=HzsL54jVVTA"
-                        >
-                          <Typography
-                            variant="body2"
-                            style={{ cursor: "pointer" }}
-                          >
-                            Ver Taller!
-                          </Typography>
-                        </Button>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </Paper>
-            ))}
-          </Grid>
-        </Grid>
-        Como separo bien esta basura ayuda
-      </Container>
-      <Container maxWidth="xl">
-        <Grid container className={classes.root} spacing={2}>
-          <Grid container justify="center" spacing="{spacing}">
-            {[0, 1, 2].map((value) => (
-              <Paper className={classes.paper}>
-                <Grid container spacing={2}>
-                  <Grid item>
-                    <ButtonBase className={classes.image}>
-                      <img
-                        className={classes.img}
-                        alt="Natacion"
-                        src="https://media1.tenor.com/images/4abd353284874d5509171a251bd07ef3/tenor.gif?itemid=16090426"
-                      />
-                    </ButtonBase>
-                  </Grid>
-                  <Grid item xs={12} sm container>
-                    <Grid item xs container direction="column" spacing={2}>
-                      <Grid item xs>
-                        <Typography gutterBottom variant="subtitle1">
-                          Volleyball
-                        </Typography>
-                        <Typography variant="body2" gutterBottom>
-                          Taller de Volleyball a lo jaiqiu manito aaa
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary">
-                          Horario: 20:00 pm - 22:00 pm
-                        </Typography>
-                      </Grid>
-                      <Grid item>
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          href="https://www.youtube.com/watch?v=S3l6Ky-3RuI"
-                        >
-                          <Typography
-                            variant="body2"
-                            style={{ cursor: "pointer" }}
-                          >
-                            Ver Taller!
-                          </Typography>
-                        </Button>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </Paper>
-            ))}
-          </Grid>
-        </Grid>
-      </Container>
-      Ostia tio separadme bien esta pinche basura
-      <Container maxWidth="xl">
-        <Grid container className={classes.root} spacing={2}>
-          <Grid container justify="center" spacing="{spacing}">
-            {[0, 1, 2].map((value) => (
-              <Paper className={classes.paper}>
-                <Grid container spacing={2}>
-                  <Grid item>
-                    <ButtonBase className={classes.image}>
-                      <img
-                        className={classes.img}
-                        alt="Natacion"
-                        src="https://thumbs.gfycat.com/DimwittedPettyHarvestmouse-size_restricted.gif"
-                      />
-                    </ButtonBase>
-                  </Grid>
-                  <Grid item xs={12} sm container>
-                    <Grid item xs container direction="column" spacing={2}>
-                      <Grid item xs>
-                        <Typography gutterBottom variant="subtitle1">
-                          Bailar a lo Gengar
-                        </Typography>
-                        <Typography variant="body2" gutterBottom>
-                          Taller de baile entretenido con gengar wn
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary">
-                          Horario: ??:?? am - ??:?? am
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary">
-                          En: Torre Pokemon, Pueblo Lavanda
-                        </Typography>
-                      </Grid>
-                      <Grid item>
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          href="https://www.youtube.com/watch?v=ih9zBLDr_ro"
-                        >
-                          <Typography
-                            variant="body2"
-                            style={{ cursor: "pointer" }}
-                          >
-                            Ver Taller!
-                          </Typography>
-                        </Button>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </Paper>
-            ))}
-          </Grid>
-        </Grid>
-        Como separo bien esta basura ayuda
-      </Container>
-      <Typography
-        variant="h2"
-        style={{ backgroundColor: "#374991", height: "30vh", color: "#FFFFFF" }}
-      >
-        Esta wea si me sale blanca
-        <Typography variant="body1" gutterBottom>
-          A ya creo que comprendo esta basura
+      </main>
+      {/* Footer */}
+      <footer className={classes.footer}>
+        <Typography variant="h5" align="center" gutterBottom color="Primary">
+          Links Rapidos!
         </Typography>
-        <Container fixed>
-          <Typography variant="body1" gutterBottom>
-            <Link
-              href="https://www.youtube.com/watch?v=podn2Szo1ls"
-              color="inherit"
-            >
-              Deporte 1
-            </Link>
-          </Typography>
-        </Container>
-      </Typography>
+        <Typography variant="subtitle1" align="center" component="p">
+          <Link color="textSecondary" href="https://www.uv.cl">
+            Universidad de Valparaiso
+          </Link>
+        </Typography>{" "}
+        <Typography variant="subtitle1" align="center" component="p">
+          <Link color="textSecondary" href="../../Home">
+            Home
+          </Link>
+        </Typography>{" "}
+        <Typography variant="subtitle1" align="center" component="p">
+          <Link color="textSecondary" href="./Login">
+            Profesores
+          </Link>
+        </Typography>
+      </footer>
     </React.Fragment>
   );
 }

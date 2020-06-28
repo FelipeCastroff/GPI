@@ -16,7 +16,7 @@ function Home() {
   };
   const redirectGrupo3 = () => {
     {
-      history.push("/Grupo3/IndiceTalleres");
+      history.push("Grupo3/VistaPrincipal");
     }
   };
   const redirectGrupo4 = () => {
