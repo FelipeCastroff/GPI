@@ -1,11 +1,11 @@
 import React from "react";
 import "../../../css/Grupo3/G3Landing.css";
-import Componente3 from "../../../Component/Grupo3/Componente3";
+import InscripcionComponent from "../../../Component/Grupo3/InscripcionComponent";
 
 function Vista3() {
   return (
     <div className="wrapper">
-      <Componente3 />
+      <InscripcionComponent />
     </div>
   );
 }

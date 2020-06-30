@@ -30,13 +30,13 @@ const redirectCompo1 = () => {
   history.push("/Grupo3/VistaPrincipal");
 };
 const redirectCompo2 = () => {
-  history.push("/Grupo3/Componente2");
+  history.push("/Grupo3/Vista2");
 };
 const redirectCompo3 = () => {
-  history.push("/Grupo3/Componente3");
+  history.push("/Grupo3/Inscripción");
 };
 const redirectCompo4 = () => {
-  history.push("/Grupo3/Componente4");
+  history.push("/Grupo3/Vista4");
 };
 const redirectCompo5 = () => {
   history.push("/Grupo3/Componente5");
@@ -88,30 +88,30 @@ export default function SSADrawer() {
           </ListItemIcon>
           <ListItemText primary={"Talleres"} />
         </ListItem>
-        <ListItem onClick={redirectCompo2} button key="Componente2">
+        {/*<ListItem onClick={redirectCompo2} button key="Componente2">
           <ListItemIcon>
             <AccessibilityNewIcon />
           </ListItemIcon>
           <ListItemText primary={"Componente2"} />
-        </ListItem>
-        <ListItem onClick={redirectCompo3} button key="Componente3">
+    </ListItem>*/}
+        {/*<ListItem onClick={redirectCompo3} button key="Inscripción">
           <ListItemIcon>
             <AccessibilityNewIcon />
           </ListItemIcon>
-          <ListItemText primary={"Componente3"} />
-        </ListItem>
+    <ListItemText primary={"Inscripción"} />
+    </ListItem>*/}
         <ListItem onClick={redirectCompo4} button key="Componente4">
           <ListItemIcon>
             <AccessibilityNewIcon />
           </ListItemIcon>
-          <ListItemText primary={"Componente4"} />
+          <ListItemText primary={"Asistencia"} />
         </ListItem>
-        <ListItem onClick={redirectCompo5} button key="Componente5">
+        {/*<ListItem onClick={redirectCompo5} button key="Componente5">
           <ListItemIcon>
             <AccessibilityNewIcon />
           </ListItemIcon>
           <ListItemText primary={"Componente5"} />
-        </ListItem>
+  </ListItem>*/}
       </List>
     </div>
   );

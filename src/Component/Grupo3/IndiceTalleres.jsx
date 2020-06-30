@@ -12,6 +12,8 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
+import Footer from "./Footer";
+
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -119,8 +121,8 @@ export default function Album() {
                   </CardContent>
                   <CardActions>
                     <Button size="small" color="primary">
-                      Ver Taller
-                    </Button>
+                      <Link href = "/Grupo3/Vista2">Ver taller</Link>
+                      </Button>
                   </CardActions>
                 </Card>
               </Grid>
@@ -129,26 +131,7 @@ export default function Album() {
         </Container>
       </main>
       {/* Footer */}
-      <footer className={classes.footer}>
-        <Typography variant="h5" align="center" gutterBottom color="Primary">
-          Links Rapidos!
-        </Typography>
-        <Typography variant="subtitle1" align="center" component="p">
-          <Link color="textSecondary" href="https://www.uv.cl">
-            Universidad de Valparaiso
-          </Link>
-        </Typography>{" "}
-        <Typography variant="subtitle1" align="center" component="p">
-          <Link color="textSecondary" href="../../Home">
-            Home
-          </Link>
-        </Typography>{" "}
-        <Typography variant="subtitle1" align="center" component="p">
-          <Link color="textSecondary" href="./Login">
-            Profesores
-          </Link>
-        </Typography>
-      </footer>
+      <Footer></Footer>
     </React.Fragment>
   );
 }

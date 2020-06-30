@@ -5,7 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import Login from "./Login";
 import VistaPrincipal from "./Vistas1/VistaPrincipal";
 import Vista2 from "./Vistas1/Vista2";
-import Vista3 from "./Vistas3/Vista3";
+import Inscripción from "./Vistas3/Inscripción";
 import Vista4 from "./Vistas3/Vista4";
 import Vista5 from "./Vistas3/Vista5";
 
@@ -16,9 +16,9 @@ function G3Landing() {
       <Switch>
         {/* Routing Grupo 3	*/}
         <Route exact path="/Grupo3/VistaPrincipal" component={VistaPrincipal} />
-        <Route exact path="/Grupo3/Vistas1" component={Vista2} />
-        <Route exact path="/Grupo3/Vistas3" component={Vista3} />
-        <Route exact path="/Grupo3/Vistas3" component={Vista4} />
+        <Route exact path="/Grupo3/Vista2" component={Vista2} />
+        {/*<Route exact path="/Grupo3/Inscripción" component={Inscripción} />*/}
+        <Route exact path="/Grupo3/Vista4" component={Vista4} />
         <Route exact path="/Grupo3/Vistas3" component={Vista5} />
         <Route exact path="/Grupo3/Login" component={Login} />
 
