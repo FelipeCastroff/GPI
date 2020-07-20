@@ -13,6 +13,15 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import Footer from "./Footer";
+import img1 from "../../Model/Grupo3/Assets/FotosPacientes/paciente1.jpg";
+import img2 from "../../Model/Grupo3/Assets/FotosPacientes/paciente2.jpg";
+import img3 from "../../Model/Grupo3/Assets/FotosPacientes/paciente3.jpg";
+import img4 from "../../Model/Grupo3/Assets/FotosPacientes/paciente4.jpg";
+import img5 from "../../Model/Grupo3/Assets/FotosPacientes/paciente5.jpg";
+import img6 from "../../Model/Grupo3/Assets/FotosPacientes/paciente6.jpg";
+import img7 from "../../Model/Grupo3/Assets/FotosPacientes/paciente7.jpg";
+import img8 from "../../Model/Grupo3/Assets/FotosPacientes/paciente8.jpg";
+import img9 from "../../Model/Grupo3/Assets/FotosPacientes/paciente9.jpg";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -57,6 +66,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cartas = [1, 2, 3];
+const kards = ["Me cago felipe weon","Me cago Lillo","Me cago Marco","Me cago Rusio","Me cago Tito","Me cago Nacho","Me cago Sofia","Me cago Jose","Me cago Yian"];
+const imagenqla=[img1,img2,img3,img4,img5,img6,img7,img8,img9];
 
 export default function Album() {
   const classes = useStyles();
@@ -104,25 +116,68 @@ export default function Album() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
+                    image= { imagenqla[card-1] }
+                    title={"Image title" + card}
+                  />
+                  {/* <img src={img6} width="300px" height="300px"></img> */}
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Deporte{card}
+                    </Typography>
+                    <Typography>
+                      Taller Deportivo: {kards[card-1]}
+                    </Typography>
+                    <Typography color="textSecondary">
+                      Horario: Martes 
+                    </Typography>                    
+                    <Typography color="textSecondary">
+                       15:50 pm - 16:30 pm
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                  <Button size="small" color="primary">
+                      <Link href = "/Grupo3/Vista2">Ver taller</Link>
+                      </Button>
+                      <Typography color="textSecondary">
+                      Cupos: 10/20
+                    </Typography>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+        <Container className={classes.cardGrid} maxWidth="md">
+          <Grid container spacing={4}>
+            {cartas.map((cartas) => (
+              <Grid item key={cartas} xs={12} sm={6} md={4}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
                     image="https://source.unsplash.com/random"
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Deporte1
+                      Deporte{cartas}
                     </Typography>
                     <Typography>
-                      Taller Deportivo: Descripcion general de contenido del
-                      taller
+                      Taller Deportivo: 
                     </Typography>
                     <Typography color="textSecondary">
-                      Horario: 15:50 pm - 16:30 pm
+                      Horario: Martes 
+                    </Typography>                    
+                    <Typography color="textSecondary">
+                       15:50 pm - 16:30 pm
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary">
+                  <Button size="small" color="primary">
                       <Link href = "/Grupo3/Vista2">Ver taller</Link>
                       </Button>
+                      <Typography color="textSecondary">
+                      Cupos: 10/20
+                    </Typography>
                   </CardActions>
                 </Card>
               </Grid>
