@@ -13,16 +13,18 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import Footer from "./Footer";
-import img1 from "../../Model/Grupo3/Assets/FotosPacientes/paciente1.jpg";
-import img2 from "../../Model/Grupo3/Assets/FotosPacientes/paciente2.jpg";
-import img3 from "../../Model/Grupo3/Assets/FotosPacientes/paciente3.jpg";
-import img4 from "../../Model/Grupo3/Assets/FotosPacientes/paciente4.jpg";
-import img5 from "../../Model/Grupo3/Assets/FotosPacientes/paciente5.jpg";
-import img6 from "../../Model/Grupo3/Assets/FotosPacientes/paciente6.jpg";
-import img7 from "../../Model/Grupo3/Assets/FotosPacientes/paciente7.jpg";
-import img8 from "../../Model/Grupo3/Assets/FotosPacientes/paciente8.jpg";
-import img9 from "../../Model/Grupo3/Assets/FotosPacientes/paciente9.jpg";
-
+import img1 from "../../Model/Grupo3/Assets/FotosDeportes/dep1.jpg";
+import img2 from "../../Model/Grupo3/Assets/FotosDeportes/dep2.jpg";
+import img3 from "../../Model/Grupo3/Assets/FotosDeportes/dep3.jpg";
+import img4 from "../../Model/Grupo3/Assets/FotosDeportes/dep4.jpg";
+import img5 from "../../Model/Grupo3/Assets/FotosDeportes/dep5.jpg";
+import img6 from "../../Model/Grupo3/Assets/FotosDeportes/dep6.jpg";
+import img7 from "../../Model/Grupo3/Assets/FotosDeportes/dep7.jpg";
+import img8 from "../../Model/Grupo3/Assets/FotosDeportes/dep8.jpg";
+import img9 from "../../Model/Grupo3/Assets/FotosDeportes/dep9.jpg";
+import imgll1 from "../../Model/Grupo3/Assets/FotosDeportes/imgll1.jpg";
+import imgll2 from "../../Model/Grupo3/Assets/FotosDeportes/imgll2.jpg";
+import imgll3 from "../../Model/Grupo3/Assets/FotosDeportes/imgll3.jpg";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -67,8 +69,10 @@ const useStyles = makeStyles((theme) => ({
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const cartas = [1, 2, 3];
-const kards = ["Me cago felipe weon","Me cago Lillo","Me cago Marco","Me cago Rusio","Me cago Tito","Me cago Nacho","Me cago Sofia","Me cago Jose","Me cago Yian"];
-const imagenqla=[img1,img2,img3,img4,img5,img6,img7,img8,img9];
+const deportes = ["Patinaje Municipal","Zumba","Escalada","Voley","Basquetbol","Taekwondo","Atletismo","Ciclismo","Tenis de Campo"];
+const imagenes = [img1,img2,img3,img4,img5,img6,img7,img8,img9];
+const depllenos = ["Futbol niños","Futbol Femenino","Club Nautico"]
+const llenos = [imgll1,imgll2,imgll3]
 
 export default function Album() {
   const classes = useStyles();
@@ -116,16 +120,13 @@ export default function Album() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image= { imagenqla[card-1] }
+                    image= { imagenes[card-1] }
                     title={"Image title" + card}
                   />
                   {/* <img src={img6} width="300px" height="300px"></img> */}
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Deporte{card}
-                    </Typography>
-                    <Typography>
-                      Taller Deportivo: {kards[card-1]}
+                      {deportes[card-1]}
                     </Typography>
                     <Typography color="textSecondary">
                       Horario: Martes 
@@ -147,22 +148,26 @@ export default function Album() {
             ))}
           </Grid>
         </Container>
+        <Typography
+                component="h2"
+                variant="h3"
+                align="center"
+                color="Primary"
+                gutterBottom
+              >Talleres Llenos</Typography>
         <Container className={classes.cardGrid} maxWidth="md">
           <Grid container spacing={4}>
             {cartas.map((cartas) => (
               <Grid item key={cartas} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
-                  <CardMedia
+                <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
-                    title="Image title"
+                    image= { llenos[cartas-1] }
+                    title={"Image title" + cartas}
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Deporte{cartas}
-                    </Typography>
-                    <Typography>
-                      Taller Deportivo: 
+                      {depllenos[cartas-1]}
                     </Typography>
                     <Typography color="textSecondary">
                       Horario: Martes 
@@ -176,7 +181,7 @@ export default function Album() {
                       <Link href = "/Grupo3/Vista2">Ver taller</Link>
                       </Button>
                       <Typography color="textSecondary">
-                      Cupos: 10/20
+                      Cupos: 20/20
                     </Typography>
                   </CardActions>
                 </Card>
