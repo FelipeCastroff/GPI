@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import { Container, Grid } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import Alert from '@material-ui/lab/Alert';
 
 const styles = theme => ({
     menu: {
@@ -20,6 +21,16 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(2),
         textAlign: 'center',
         color: theme.palette.text.secondary,
+    },
+}));
+
+
+const useStyles1 = makeStyles((theme) => ({
+    root: {
+        width: '100%',
+        '& > * + *': {
+            marginTop: theme.spacing(2),
+        },
     },
 }));
 
@@ -96,17 +107,7 @@ class TextFields extends React.Component {
                         shrink: true
                     }}
                 />
-                <Grid container spacing={3}>
-                    <Grid item xs></Grid>
-                    <Grid item xs={10} >
-                        <Paper className={classes.paper}>
-                            <text>
-                            En caso de ser menor de edad, por favor llenar con los datos de su tutor legal.
-                            </text>
-                        </Paper>
-                    </Grid>
-                    <Grid item xs></Grid>
-                </Grid>
+                <Alert severity="info">En caso de ser menor de edad, por favor llenar con los datos de su tutor legal!</Alert>
                 <TextField
                     margin="dense"
                     id="name01"
@@ -140,9 +141,10 @@ class TextFields extends React.Component {
                         shrink: true
                     }}
                 />
-                <Button type="submit" variant="outlined" >
-                    Enviar
-        </Button>
+                <Button type="submit" variant="outlined" style={{ backgroundColor: "#f99f31" }}>
+                    <text style={{ color: '#FFF' }}>Enviar</text>
+
+                </Button>
             </form>
         );
     }

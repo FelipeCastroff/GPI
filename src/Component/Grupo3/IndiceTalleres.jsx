@@ -25,7 +25,8 @@ import img9 from "../../Model/Grupo3/Assets/FotosDeportes/dep9.jpg";
 import imgll1 from "../../Model/Grupo3/Assets/FotosDeportes/imgll1.jpg";
 import imgll2 from "../../Model/Grupo3/Assets/FotosDeportes/imgll2.jpg";
 import imgll3 from "../../Model/Grupo3/Assets/FotosDeportes/imgll3.jpg";
-
+import Sobrecupo from "./sobrecupo";
+import logo from "../../Model/Grupo3/Assets/FotosDeportes/logo.png";
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -78,11 +79,11 @@ export default function Album() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <React.Fragment  >
       <CssBaseline />
-      <main>
-        <div className={classes.heroContent}>
-          <Container maxWidth="xl" img className={classes.img}>
+      <main >
+        <div className={classes.heroContent} style={{ background: '#f6f6f6' }}>
+          <Container maxWidth="xl" img className={classes.img} >
             <Container maxWidth="md">
               <Typography
                 component="h1"
@@ -93,6 +94,7 @@ export default function Album() {
               >
                 Talleres de Deportes
               </Typography>
+             
               <Typography variant="h5" align="center" color="inherit" paragraph>
                 Escoge el taller deportivo que más te guste y acomode, sientete
                 libre de escoger y no olvides de asistir a los horarios de cada
@@ -113,7 +115,7 @@ export default function Album() {
             </Container>
           </Container>
         </div>
-        <Container className={classes.cardGrid} maxWidth="md">
+        <Container className={classes.cardGrid} maxWidth="md" >
           <Grid container spacing={4}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
@@ -136,8 +138,8 @@ export default function Album() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                  <Button size="small" color="primary">
-                      <Link href = "/Grupo3/Vista2">Ver taller</Link>
+                  <Button size="small" color="primary" style={{backgroundColor: "#f99f31"}} >
+                      <Link href = "/Grupo3/Vista2" style={{ color: '#FFF' }}>Ver taller</Link>
                       </Button>
                       <Typography color="textSecondary">
                       Cupos: 10/20
@@ -177,12 +179,15 @@ export default function Album() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                  <Button size="small" color="primary">
-                      <Link href = "/Grupo3/Vista2">Ver taller</Link>
+                  <Button size="small" color="primary" style={{backgroundColor: "#f99f31"}}>
+                      <Link href = "/Grupo3/Vista2" style={{ color: '#FFF' }}>Ver taller</Link>
                       </Button>
                       <Typography color="textSecondary">
                       Cupos: 20/20
                     </Typography>
+                  </CardActions>
+                  <CardActions>
+                    <Sobrecupo></Sobrecupo>
                   </CardActions>
                 </Card>
               </Grid>
@@ -192,6 +197,8 @@ export default function Album() {
       </main>
       {/* Footer */}
       <Footer></Footer>
+      
     </React.Fragment>
+
   );
 }

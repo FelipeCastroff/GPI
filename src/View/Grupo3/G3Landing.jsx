@@ -9,6 +9,7 @@ import Inscripción from "./Vistas3/Inscripción";
 import Vista4 from "./Vistas3/Vista4";
 import Vista5 from "./Vistas3/Vista5";
 
+
 function G3Landing() {
   return (
     <div>
@@ -19,7 +20,7 @@ function G3Landing() {
         <Route exact path="/Grupo3/Vista2" component={Vista2} />
         {/*<Route exact path="/Grupo3/Inscripción" component={Inscripción} />*/}
         <Route exact path="/Grupo3/Vista4" component={Vista4} />
-        <Route exact path="/Grupo3/Vistas3" component={Vista5} />
+        <Route exact path="/Grupo3/Administración" component={Vista5} />
         <Route exact path="/Grupo3/Login" component={Login} />
 
         {/* Fin Routing Grupo 3*/}

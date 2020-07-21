@@ -7,13 +7,13 @@ const useStyles = makeStyles((theme) => ({
     footer: {
       backgroundColor: theme.palette.background.paper,
       padding: theme.spacing(2),
-      backgroundColor: "#4054c7",
+      backgroundColor: "#303440",
     },
   }));
   
   function Copyright() {
     return (
-      <Typography variant="body2" color="textSecondary" align="center">
+      <Typography variant="body2" color="#aaaaaa" align="center">
         {'Copyright © '}
         <Link color="inherit" href="https://orange-heist.netlify.app">
           Orange Hesit
@@ -27,7 +27,7 @@ export default function Album() {
     const classes = useStyles();
 return(
     <footer className={classes.footer}>
-        <Typography variant="h5" align="center" gutterBottom color="textSecondary" >
+        <Typography variant="h5" align="center" gutterBottom color="aaaaaa" >
           Links Rapidos!
         </Typography>
         <Typography variant="subtitle1" align="center" component="p">

@@ -57,7 +57,7 @@ export default function Login() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Iniciar sesión
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -66,7 +66,7 @@ export default function Login() {
             required
             fullWidth
             id="email"
-            label="Email Address"
+            label="Correo"
             name="email"
             autoComplete="email"
             autoFocus
@@ -84,7 +84,7 @@ export default function Login() {
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
+            label="Recordar correo y contraseña"
           />
           <Button
             type="submit"
@@ -98,12 +98,12 @@ export default function Login() {
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
-                Forgot password?
+                ¿Olvidaste tu contraseña?
               </Link>
             </Grid>
             <Grid item>
               <Link href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
+                {"No tienes cuenta, contactanos."}
               </Link>
             </Grid>
           </Grid>

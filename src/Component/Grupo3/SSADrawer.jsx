@@ -39,7 +39,7 @@ const redirectCompo4 = () => {
   history.push("/Grupo3/Vista4");
 };
 const redirectCompo5 = () => {
-  history.push("/Grupo3/Componente5");
+  history.push("/Grupo3/Administración");
 };
 
 export default function SSADrawer() {
@@ -106,12 +106,12 @@ export default function SSADrawer() {
           </ListItemIcon>
           <ListItemText primary={"Asistencia"} />
         </ListItem>
-        {/*<ListItem onClick={redirectCompo5} button key="Componente5">
+        <ListItem onClick={redirectCompo5} button key="Administración">
           <ListItemIcon>
             <AccessibilityNewIcon />
           </ListItemIcon>
-          <ListItemText primary={"Componente5"} />
-  </ListItem>*/}
+          <ListItemText primary={"Administración"} />
+  </ListItem>
       </List>
     </div>
   );

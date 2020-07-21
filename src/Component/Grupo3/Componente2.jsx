@@ -21,6 +21,17 @@ import Button from "@material-ui/core/Button";
 import Inscribite from "./InscripcionComponent";
 import Footer from "./Footer";
 
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+
+import IconButton from '@material-ui/core/IconButton';
+
+import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import SkipNextIcon from '@material-ui/icons/SkipNext';
+import MuroP from "./MuroProf";
+import MuroP1 from "./MuroProf1";
+
 
 //import 'react-calendar/dist/Calendar.css';
 function Copyright() {
@@ -50,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "63.25%", // 16:9
   },
   cardMedia1: {
-    width: 120, height: 150,
+    width: 250, height: 250,
 
 
   },
@@ -67,6 +78,11 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(4, 5, 6),
 
   },
+  root1: {
+    height: 200,
+    paddingLeft: theme.spacing(4),
+    paddingBottom: theme.spacing(4),
+  },
   container: {
 
   },
@@ -77,12 +93,33 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
   },
   fixedHeight: { // ancho de las 2 primeras grid
-    height: 777,
+    height: 960,
+  },
+  details: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  content: {
+
+  },
+  cover: {
+    width: 151,
+  },
+  controls: {
+    display: 'flex',
+    alignItems: 'center',
+    paddingLeft: theme.spacing(1),
+    paddingBottom: theme.spacing(1),
+  },
+  playIcon: {
+    height: 38,
+    width: 38,
   },
 }));
 
 export default function Dashboard() {
   const classes = useStyles();
+
 
 
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
@@ -102,7 +139,7 @@ export default function Dashboard() {
                     Deporte X
                 </Typography>
                   <Typography variant="subtitle1" align="left" color="inherit" noWrap="">
-                    Código actividad: 666
+                    Cupos: 10/20
                 </Typography>
                   <Typography variant="subtitle1" align="left" color="inherit" noWrap="">
                     Lugar: Villa las palmas, pasaje el maqui n°234.
@@ -138,18 +175,17 @@ export default function Dashboard() {
                   <br></br>
                   <Divider />
                   <br></br>
-                  <Typography variant="h5" align="left" color="inherit" paragraph>
-                    Datos del profesor.
-                </Typography>
 
-                  {/*<CardMedia
+
+
+
+                  {/*
+                                      {<CardMedia
                     className={classes.cardMedia1}
                     image="https://source.unsplash.com/random"
                     title="Image title"
-              />*/}
-
-
-                  <Typography variant="subtitle2" align="left" color="inherit" noWrap="">
+              />}
+                    <Typography variant="subtitle2" align="left" color="inherit" noWrap="">
                     Nombre: Felipe Castro A
                 </Typography>
                   <Typography variant="subtitle2" align="left" color="inherit" noWrap="">
@@ -164,6 +200,133 @@ export default function Dashboard() {
                   <Typography variant="subtitle2" align="left" color="inherit" noWrap="">
                     Numero: +56962967905
                 </Typography>
+                    */}
+
+                  <div className={classes.details}>
+                    <Typography variant="h5" align="center" color="inherit" paragraph>
+                      Datos del profesor 1
+                </Typography>
+
+                    <Grid container className={classes.root} spacing={2}>
+                      <Grid item xs={6}>
+
+                        <Grid container>
+                          <Grid item>
+                            <Typography variant="subtitle2" align="left" color="inherit" noWrap="">
+                              Nombre: Felipe Castro A
+                </Typography>
+                            <Typography variant="subtitle2" align="left" color="inherit" noWrap="">
+                              Rut: 9.999.999-0
+                </Typography>
+                            <Typography variant="subtitle2" align="left" color="inherit" noWrap="">
+                              Correo: felipe.castroa@alumnos.uv.cl
+                </Typography>
+                            <Typography variant="subtitle2" align="left" color="inherit" noWrap="">
+                              Direccion: Melipilla.
+                </Typography>
+                            <Typography variant="subtitle2" align="left" color="inherit" noWrap="">
+                              Numero: +56962967905
+                </Typography>
+
+
+
+                            <Typography variant="subtitle2" align="letf">
+                              Horario de clases: Martes
+                    </Typography>
+                            <Typography variant="subtitle2" align="letf">
+                              15:50 pm - 16:30 pm
+                    </Typography>
+                            <h1 align="left">
+                              <Inscribite></Inscribite></h1>
+                          </Grid>
+                        </Grid>
+
+                      </Grid>
+                      <Grid item xs={6}>
+
+                        <Grid container>
+                          <Grid item>
+
+
+                            <CardMedia
+
+                              align="center"
+                              className={classes.cardMedia1}
+                              image="https://informatica.uv.cl/images/contenido/academicos/actualizado/rodrigo_olivares.png"
+                              title="Image title"
+                            />
+
+                          </Grid>
+                        </Grid>
+
+                      </Grid>
+                    </Grid>
+
+                  </div>
+                  <br></br>
+                  <Divider />
+                  <br></br>
+
+                  <div className={classes.details}>
+                    <Typography variant="h5" align="center" color="inherit" paragraph>
+                      Datos del profesor 2
+                </Typography>
+
+                    <Grid container className={classes.root} spacing={2}>
+                      <Grid item xs={6}>
+
+                        <Grid container>
+                          <Grid item>
+                            <Typography variant="subtitle2" align="left" color="inherit" noWrap="">
+                              Nombre: Fernando del pino
+                </Typography>
+                            <Typography variant="subtitle2" align="left" color="inherit" noWrap="">
+                              Rut: 9.999.999-0
+                </Typography>
+                            <Typography variant="subtitle2" align="left" color="inherit" noWrap="">
+                              Correo: Fernando.delprino@alumnos.uv.cl
+                </Typography>
+                            <Typography variant="subtitle2" align="left" color="inherit" noWrap="">
+                              Direccion: san fernando.
+                </Typography>
+                            <Typography variant="subtitle2" align="left" color="inherit" noWrap="">
+                              Numero: +56962967905
+                </Typography>
+
+
+
+                            <Typography variant="subtitle2" align="letf">
+                              Horario de clases: Martes
+                    </Typography>
+                            <Typography variant="subtitle2" align="letf">
+                              15:50 pm - 16:30 pm
+                    </Typography>
+
+                            <h1 align="left">
+                              <Inscribite></Inscribite></h1>
+                          </Grid>
+                        </Grid>
+
+                      </Grid>
+                      <Grid item xs={6}>
+
+                        <Grid container>
+                          <Grid item>
+                            <CardMedia
+                              align="center"
+                              className={classes.cardMedia1}
+                              image="https://informatica.uv.cl/images/contenido/academicos/actualizado/gabriel_astudillo.png"
+                              title="Image title"
+                            />
+                          </Grid>
+                        </Grid>
+
+                      </Grid>
+                    </Grid>
+
+                  </div>
+
+
                 </Paper>
               </Grid>
               {/* Recent Deposits */}
@@ -171,25 +334,23 @@ export default function Dashboard() {
                 <Paper className={fixedHeightPaper}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
+                    image="https://postgrados.derecho.uchile.cl/wp-content/uploads/2019/05/Deporte2.jpg"
                     title="Image title"
                   />
                   <br></br>
                   <Divider />
                   <br></br>
-                  <Typography variant="h5" align="center" color="inherit" paragraph>
-                    Horario
-                </Typography>
-                  <Calendar lign="center" />
+                  <Typography variant="h5" align="center">Muro del taller</Typography>
+                  <MuroP></MuroP>
+                  <br></br>
+                  <MuroP1></MuroP1>
                 </Paper>
               </Grid>
 
             </Grid>
 
           </Container>
-          <container>
-            <h1 align="center">
-              <Inscribite></Inscribite></h1></container>
+
         </div>
       </main>
       <Footer></Footer>

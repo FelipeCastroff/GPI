@@ -86,8 +86,9 @@ export default function FormDialog() {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        ¡Inscribete!
+      <Button variant="outlined" color="primary" onClick={handleClickOpen}style={{backgroundColor: "#f99f31"}} >
+        <text style={{ color: '#FFF' }}> ¡Inscribete!</text>
+       
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Inscripción</DialogTitle>
